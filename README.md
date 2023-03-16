@@ -94,6 +94,8 @@ $ podman run --rm -it -v ~/.docker/config.json:/root/.docker/config.json:z -v ./
 
 ## Build the custom Microshift container image
 
+:warning: I haven't tested if embedding the entitlement stuff works during a build, but theoretically it should :crossed_fingers:
+
 Now we can use the newly pushed RHEL for Edge container image as a base layer for our customized Microshift image.
 
 It is expected that you have populated the local `etc` directory with the following:
@@ -125,7 +127,8 @@ $ podman push quay.io/miabbott/rhel-for-edge:8.7-microshift
 :warning: This is where things failed for me.  I ran into the following errors:
 
 <details><summary>Click to expand the errors</summary>
-```
+
+```text
 Installing: microshift-selinux-4.12.7-202303082246.p0.g5be591c.assembly.4.12.7.el8.noarch (rhocp-4.12)
 libsemanage.semanage_commit_sandbox: Error while renaming /etc/selinux/targeted/active to /etc/selinux/targeted/previous. (Invalid cross-device link).
 /usr/sbin/semodule:  Failed!
@@ -164,6 +167,7 @@ Failed to connect to bus: Host is down
 error: Error -1 running transaction
 Error: building at STEP "RUN rpm-ostree install microshift &&     systemctl enable microshift &&     ostree container commit": while running runtime: exit status 1
 ```
+
 </details>
 
 This lead me down the rabbit hole of <https://github.com/coreos/rpm-ostree/issues/3449> -> <https://github.com/SELinuxProject/selinux/issues/343> -> <https://github.com/SELinuxProject/selinux/commit/c7a3b93e31df312ed5b71436ec874054a95d4209>
