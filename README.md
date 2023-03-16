@@ -6,6 +6,8 @@ This is an **aspirational** example of using [ostree native containers](https://
 
 It assumes that you have access to RHEL/Microshift content and are able to run [`osbuild`](https://osbuild.org) in order to produce a starting RHEL for Edge image.  It is advisable to use a RHEL 8 based RHEL system to run `osbuild` and build RHEL for Edge artifacts using RHEL 8 content.
 
+There's likely a lot of room for streamlining (maybe an Ansible playbook?) to do a lot of this heavy lifting, but I prefer to be verbose and show the steps along the way.  Patches welcome!
+
 ## Build RHEL for Edge starter
 
 On your RHEL system running `osbuild`, we need to create two blueprints:
