@@ -1,0 +1,6 @@
+FROM quay.io/miabbott/rhel-for-edge:8.7
+COPY etc/ /etc
+RUN rpm-ostree install microshift && \
+    systemctl enable microshift && \
+    rm -rf /etc/{pki,rhsm,yum.repos.d} && \
+    ostree container commit

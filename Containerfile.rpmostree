@@ -1,0 +1,4 @@
+FROM registry.fedoraproject.org/fedora:37
+RUN dnf -y upgrade && \
+    dnf -y install rpm-ostree && \
+    dnf clean all

@@ -1,0 +1,4 @@
+name = "minimal"
+description = "minimal rhel for edge blueprint"
+version = "1.0.0"
+distro = "rhel-87"

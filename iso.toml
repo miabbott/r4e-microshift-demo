@@ -1,0 +1,4 @@
+name = "iso"
+description = "blueprint to create RHEL for Edge ISO"
+version = "1.0.0"
+distro = "rhel-87"
