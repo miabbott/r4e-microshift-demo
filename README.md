@@ -4,7 +4,7 @@ This is an **aspirational** example of using [ostree native containers](https://
 
 :warning: I repeat, this is **ASPIRATIONAL** as in, this currently **does not work** given the constraints of the Microshift requirement of RHEL 8.7, where there are issues that exist which prevent this from being successful.
 
-It assumes that you have access to RHEL/Microshift content and are able to run []`osbuild`](https://osbuild.org) in order to produce a starting RHEL for Edge image.  It is advisable to use a RHEL 8 based RHEL system to run `osbuild` and build RHEL for Edge artifacts using RHEL 8 content.
+It assumes that you have access to RHEL/Microshift content and are able to run [`osbuild`](https://osbuild.org) in order to produce a starting RHEL for Edge image.  It is advisable to use a RHEL 8 based RHEL system to run `osbuild` and build RHEL for Edge artifacts using RHEL 8 content.
 
 ## Build RHEL for Edge starter
 
