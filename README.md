@@ -185,6 +185,6 @@ On your RHEL for Edge system that you installed earlier:
 Copy your registry pull secret to `/etc/ostree/auth.json` and then use `rpm-ostree rebase`
 
 ```bash
-$ sudo rpm-ostree rebase --experimental ostree-unverified-registry:quay.io/miabbott/rhel-for-edge:9.1-microshift
+$ sudo rpm-ostree rebase --experimental ostree-unverified-registry:quay.io/miabbott/rhel-for-edge:8.7-microshift
 $ sudo systemctl reboot
 ```
