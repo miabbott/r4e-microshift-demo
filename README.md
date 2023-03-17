@@ -201,6 +201,8 @@ TL;DR: it's a bug in `libsemodule` that is fixed in version 3.4, but RHEL 8.7 is
 
 Additionally, it looks like the Microshift packaging attempts to run [`systemctl restart` as part of the `%post`](https://github.com/openshift/microshift/blob/7015c8c5a11c7a88920f4287b4076915ffdbac0f/packaging/rpm/microshift.spec#L216-L222)
 
+And I think there is something going on with the `crio` package; when I try to install it as part of the container build on its own, I get `error: Error -1 running transaction`.  Perhaps because it is trying to install directories in `/opt`?
+
 ## Rebase your RHEL for Edge system
 
 :warning: This part is theoretical, since I've not been able to successfully build the container yet. :sob:
