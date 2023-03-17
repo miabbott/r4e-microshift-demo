@@ -16,11 +16,14 @@ I'm doing this to practice with [Mermaid](https://mermaid.js.org)
 flowchart TD;
   id1[RHEL VM with osbuild]-->|osbuild produces|id2[RHEL for Edge ostree commit];
   id2-->|osbuild generates|id3[RHEL for Edge ISO];
-  id3-->|modified via mkksios|id4[RHEL for Edge ISO with modified kickstart];
+  id3-->|modified via mkksiso|id4[RHEL for Edge ISO with modified kickstart];
   id4-->|ISO is deployed|id5[RHEL for Edge system];
-  id2-->|`rpm-ostree encapsulate`|id6[OCI image with RHEL for Edge ostree commit encapsulated];
-  id6-->|`podman build`|id7[OCI image with Microshift installed];
-  id7-->|`rpm-ostree rebase`|id5;
+  id2-->|rpm-ostree encapsulate|id6[(OCI image with RHEL for Edge ostree commit encapsulated)];
+  id6-->|podman build|id7[OCI image with Microshift installed];
+  id5-->|rpm-ostree rebase to OCI image|id8[RHEL for Edge with Microshift];
+
+  class id1 fill:#FFCCCC
+  cladd id6 fill:#99CCFF
 ```
 
 
