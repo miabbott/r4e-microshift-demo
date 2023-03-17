@@ -19,7 +19,7 @@ flowchart TD;
   id3-->id4[RHEL for Edge ISO with modified kickstart];
   id4-->id5[RHEL for Edge system];
   id2-->id6[OCI image with RHEL for Edge ostree commit encapsulated];
-  id5-->id7[OCI image with Microshift installed];
+  id6-->id7[OCI image with Microshift installed];
   id7-->id5;
 ```
 
