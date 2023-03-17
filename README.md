@@ -8,6 +8,29 @@ It assumes that you have access to RHEL/Microshift content and are able to run [
 
 There's likely a lot of room for streamlining (maybe an Ansible playbook?) to do a lot of this heavy lifting, but I prefer to be verbose and show the steps along the way.  Patches welcome!
 
+## Flowchart
+
+I'm doing this to practice with [Mermaid](https://mermaid.js.org)
+
+```mermaid
+flowchart TD;
+  id1[RHEL VM with osbuild]-->|osbuild produces|id2[RHEL for Edge ostree commit];
+  id2-->|osbuild generates|id3[RHEL for Edge ISO];
+  id3-->|modified via mkksiso|id4[RHEL for Edge ISO <br/> with modified kickstart];
+  id4-->|ISO is deployed|id5[RHEL for Edge system];
+  id2-->|rpm-ostree encapsulate|id6[(OCI image <br/> with RHEL for Edge <br/> commit encapsulated)];
+  id6-->|podman build|id7[(OCI image <br/> with Microshift installed)];
+  id5-->|rpm-ostree rebase to OCI image|id8[RHEL for Edge with Microshift];
+  id7-->id8;
+
+  classDef vm fill:#ff6666,stroke:#000000
+  classDef ctr fill:#0080ff,stroke:#000000
+
+  class id1,id5,id8 vm
+  class id6,id7 ctr
+```
+
+
 ## Build RHEL for Edge starter
 
 On your RHEL system running `osbuild`, we need to create two blueprints:
