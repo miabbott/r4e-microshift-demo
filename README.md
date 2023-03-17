@@ -19,7 +19,7 @@ flowchart TD;
   id3-->|modified via mkksiso|id4[RHEL for Edge ISO <br/> with modified kickstart];
   id4-->|ISO is deployed|id5[RHEL for Edge system];
   id2-->|rpm-ostree encapsulate|id6[(OCI image <br/> with RHEL for Edge <br/> commit encapsulated)];
-  id6-->|podman build|id7[(OCI image with Microshift installed)];
+  id6-->|podman build|id7[(OCI image <br/> with Microshift installed)];
   id5-->|rpm-ostree rebase to OCI image|id8[RHEL for Edge with Microshift];
   id7-->id8;
 
