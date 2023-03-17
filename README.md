@@ -23,7 +23,7 @@ flowchart TD;
   id5-->|rpm-ostree rebase to OCI image|id8[RHEL for Edge with Microshift];
 
   class id1 fill:#FFCCCC
-  cladd id6 fill:#99CCFF
+  class id6 fill:#99CCFF
 ```
 
 
