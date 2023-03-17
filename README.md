@@ -22,8 +22,8 @@ flowchart TD;
   id6-->|podman build|id7[(OCI image with Microshift installed)];
   id5-->|rpm-ostree rebase to OCI image|id8[RHEL for Edge with Microshift];
 
-  classDef vm fill:#ff6666,stroke:#000
-  classDef ctr fill:#99ccff,stroke:#000
+  classDef vm fill:#ff6666,stroke:#000000
+  classDef ctr fill:#99ccff,stroke:#000000
 
   class id1,id5 vm
   class id6,id7 ctr
